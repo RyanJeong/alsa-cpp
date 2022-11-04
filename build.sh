@@ -28,6 +28,7 @@ cp $WORKING_DIR/config.sub $ALSA_LIB_FOLDER
 cd $ALSA_LIB_FOLDER
 export CC=aarch64-linux-gnu-gcc
 export CXX=aarch64-linux-gnu-g++
+# static
 ./configure \
   --enable-shared=no \
   --enable-static=yes \
@@ -35,6 +36,15 @@ export CXX=aarch64-linux-gnu-g++
   --host=aarch64-linux-gnu \
   --prefix=$WORKING_DIR \
   --disable-python
+# shared
+# ./configure \
+#   --enable-shared=yes \
+#   --enable-static=no \
+#   --with-pic \
+#   --host=aarch64-linux-gnu \
+#   --prefix=$WORKING_DIR \
+#   --disable-python
+
 make clean
 make -j$NUM_CORE
 make install
