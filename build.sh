@@ -26,8 +26,6 @@ fi
 
 cp $WORKING_DIR/config.sub $ALSA_LIB_FOLDER
 cd $ALSA_LIB_FOLDER
-export CC=aarch64-linux-gnu-gcc
-export CXX=aarch64-linux-gnu-g++
 # static
 ./configure \
   --enable-shared=no \
